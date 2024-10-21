@@ -12,10 +12,12 @@ class Job extends Model {
     use HasFactory;
 
     protected $table = 'jobs_listings';
+ 
+    // protected $fillable = [ 'employer_id', 'title', 'hours', 'salary' ];
 
-    protected $fillable = [ 'title', 'hours', 'salary' ];
+    protected $guarded = [];
 
     public function employer() {
         return $this->belongsTo(Employer::class);
     }
-}   
+} 
